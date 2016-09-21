@@ -17,7 +17,7 @@
 		<div data-role="content">
 <?php
 			include('inc/conexion.php');
-			$sql = 'SELECT p.* from personas p where p.personas_id = {$_GET['id']}';
+			$sql = "SELECT p.* from personas p where p.personas_id = {$_GET['id']}";
 			$resultado = $conexion->query($sql);
 			$fila = $resultado->fetch_assoc();
 ?>		
