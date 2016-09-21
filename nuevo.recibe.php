@@ -1,7 +1,7 @@
 <?php
 	include('inc/conexion.php');
 
-	$sql	=	'INSERT INTO personas SET'
+	$sql	=	'INSERT INTO personas SET '
 			.	"paterno = '{$_POST['text-paterno']}', "
 			.	"materno = '{$_POST['text-materno']}', "
 			.	"nombres = '{$_POST['text-nombres']}'";
