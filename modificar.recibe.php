@@ -1,10 +1,11 @@
 <?php
 	include('inc/conexion.php');
 
-	$sql	=	'INSERT INTO personas SET '
+	$sql	=	'UPDATE personas SET '
 			.	"paterno = '{$_POST['text-paterno']}', "
 			.	"materno = '{$_POST['text-materno']}', "
-			.	"nombres = '{$_POST['text-nombres']}'";
+			.	"nombres = '{$_POST['text-nombres']}' "
+			.	"where personas_id = {$_POST['text-id']}";
 	$resultado = $conexion->query($sql);
 	if ($resultado)
 	{
@@ -12,6 +13,6 @@
 	}
 	else
 	{
-		header('Location: nuevo.php');
+		header('Location: listar.php');
 	}
 ?>

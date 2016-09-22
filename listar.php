@@ -22,8 +22,8 @@
 							<th>Apellidos y Nombres</th>
 							<th></th>
 						</tr>
-						</thead>
-						<tbody>
+					</thead>
+					<tbody>
 <?php
 						include('inc/conexion.php');
 						$sql = 'SELECT p.* from personas p';
@@ -34,14 +34,17 @@
 ?>
 							<tr>
 								<th><?php echo $fila['personas_id']; ?></th>
-	 							<td><?php echo $fila['paterno']; ?></td>
-								<td><a href="modificar.datos.php?id=<?php echo $fila['personas_id']; ?>" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-notext">Modificar</a></td>
+	 							<td><?php echo $fila['paterno'].' '.$fila['materno'].' '.$fila['nombres']; ?></td>
+								<td>
+									<a href="modificar.datos.php?id=<?php echo $fila['personas_id']; ?>" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-notext">Modificar</a>
+									<a href="eliminar.recibe.php?id=<?php echo $fila['personas_id']; ?>" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext">Eliminar</a>
+								</td>
 							</tr>
 <?php
 						}
 ?>			
-						</tbody>
-					</table>
+					</tbody>
+				</table>
 
 			</div>
 			<div data-role="footer">
